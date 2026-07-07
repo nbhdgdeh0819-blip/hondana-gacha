@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本棚ガチャ</title>
+<style>
+  :root{
+    --bg:#f7f2e7;
+    --paper:#fffdf6;
+    --ink:#3e3428;
+    --brown:#8a6d4b;
+    --accent:#c0563b;
+    --gold:#d9a441;
+    --line:#e5dcc8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.7;
+    padding:16px;
+    max-width:640px;
+    margin:0 auto;
+  }
+  header{text-align:center;padding:24px 0 16px;}
+  header h1{font-size:2rem;letter-spacing:.15em;color:var(--brown);}
+  header p{font-size:.85rem;color:#8a7d66;margin-top:6px;}
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 2px 6px rgba(90,70,40,.08);
+  }
+  .card h2{
+    font-size:1.05rem;
+    color:var(--brown);
+    border-bottom:2px dotted var(--line);
+    padding-bottom:8px;
+    margin-bottom:14px;
+    letter-spacing:.1em;
+  }
+  .gacha-btn{
+    display:block;width:100%;
+    font-family:inherit;
+    font-size:1.2rem;letter-spacing:.2em;
+    background:var(--accent);color:#fff;
+    border:none;border-radius:999px;
+    padding:16px;cursor:pointer;
+    box-shadow:0 4px 0 #96422d;
+    transition:transform .1s;
+  }
+  .gacha-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #96422d;}
+  .gacha-note{text-align:center;font-size:.8rem;color:#8a7d66;margin-top:8px;}
+  #gachaResult{
+    margin-top:16px;display:none;
+    background:#fdf6e3;border:1px dashed var(--gold);
+    border-radius:10px;padding:16px;text-align:center;
+    animation:pop .4s ease;
+  }
+  @keyframes pop{0%{transform:scale(.7);opacity:0;}100%{transform:scale(1);opacity:1;}}
+  #gachaResult .g-title{font-size:1.2rem;font-weight:bold;color:var(--accent);}
+  #gachaResult .g-author{font-size:.9rem;color:var(--brown);margin-top:4px;}
+  #gachaResult .g-stars{color:var(--gold);margin-top:6px;letter-spacing:.2em;}
+  #gachaResult .g-memo{font-size:.85rem;margin-top:8px;color:#6b5d48;}
+  label{display:block;font-size:.85rem;color:var(--brown);margin:12px 0 4px;}
+  label .req{color:var(--accent);font-size:.75rem;margin-left:4px;}
+  input[type=text],select,textarea{
+    width:100%;font-family:inherit;font-size:1rem;
+    padding:10px;border:1px solid var(--line);
+    border-radius:8px;background:#fff;color:var(--ink);
+  }
+  textarea{resize:vertical;min-height:60px;}
+  .stars{display:flex;gap:6px;font-size:1.8r
